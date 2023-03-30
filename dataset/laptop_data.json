@@ -1,0 +1,244 @@
+{
+  "entries": [
+    {
+      "id": "1",
+      "name": "Asus VivoBook Pro 15",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 4,
+      "price": 60000,
+      "screenDiagonal": 15.6,
+      "screenResolution": {
+        "horizontal": 1920,
+        "vertical": 1080
+      },
+      "graphicsCardModel": {
+        "prefix": "RTX",
+        "number": 3050
+      },
+      "weight": 1800,
+      "batteryCapacity": 50.00,
+      "designMark": "GOOD"
+    },
+    {
+      "id": "2",
+      "name": "Asus Tuf Gaming F15",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 4,
+      "price": 64000,
+      "screenDiagonal": 15.6,
+      "screenResolution": {
+        "horizontal": 1920,
+        "vertical": 1080
+      },
+      "graphicsCardModel": {
+        "prefix": "GTX",
+        "number": 1650
+      },
+      "weight": 2300,
+      "batteryCapacity": 48.00,
+      "designMark": "EXCELLENT"
+    },
+    {
+      "id": "3",
+      "name": "Ardor Gaming Neo G15-I5ND200",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 4,
+      "price": 65000,
+      "screenDiagonal": 15.6,
+      "screenResolution": {
+        "horizontal": 1920,
+        "vertical": 1080
+      },
+      "graphicsCardModel": {
+        "prefix": "GTX",
+        "number": 1650
+      },
+      "weight": 2000,
+      "batteryCapacity": 52.00,
+      "designMark": "EXCELLENT"
+    },
+    {
+      "id": "4",
+      "name": "Gigabyte G5 GE",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 4,
+      "price": 68000,
+      "screenDiagonal": 15.6,
+      "screenResolution": {
+        "horizontal": 1920,
+        "vertical": 1080
+      },
+      "graphicsCardModel": {
+        "prefix": "RTX",
+        "number": 3050
+      },
+      "weight": 1990,
+      "batteryCapacity": 48.96,
+      "designMark": "GOOD"
+    },
+    {
+      "id": "5",
+      "name": "MSI Katana GF76",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 4,
+      "price": 71000,
+      "screenDiagonal": 17.3,
+      "screenResolution": {
+        "horizontal": 1920,
+        "vertical": 1080
+      },
+      "graphicsCardModel": {
+        "prefix": "GTX",
+        "number": 1650
+      },
+      "weight": 2600,
+      "batteryCapacity": 53.50,
+      "designMark": "GOOD"
+    },
+    {
+      "id": "6",
+      "name": "Acer Aspire 7",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 4,
+      "price": 75000,
+      "screenDiagonal": 15.6,
+      "screenResolution": {
+        "horizontal": 1920,
+        "vertical": 1080
+      },
+      "graphicsCardModel": {
+        "prefix": "RTX",
+        "number": 3050
+      },
+      "weight": 2150,
+      "batteryCapacity": 48.00,
+      "designMark": "POOR"
+    },
+    {
+      "id": "7",
+      "name": "Acer Nitro 5",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 4,
+      "price": 75000,
+      "screenDiagonal": 15.6,
+      "screenResolution": {
+        "horizontal": 1920,
+        "vertical": 1080
+      },
+      "graphicsCardModel": {
+        "prefix": "GTX",
+        "number": 1650
+      },
+      "weight": 2300,
+      "batteryCapacity": 57.00,
+      "designMark": "GOOD"
+    },
+    {
+      "id": "8",
+      "name": "Ardor Gaming Neo G15-I5ND204",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 6,
+      "price": 79000,
+      "screenDiagonal": 15.6,
+      "screenResolution": {
+        "horizontal": 1920,
+        "vertical": 1080
+      },
+      "graphicsCardModel": {
+        "prefix": "RTX",
+        "number": 3050
+      },
+      "weight": 2000,
+      "batteryCapacity": 52.00,
+      "designMark": "GOOD"
+    },
+    {
+      "id": "9",
+      "name": "Asus Tuf Gaming F15",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 4,
+      "price": 64000,
+      "screenDiagonal": 15.6,
+      "screenResolution": {
+        "horizontal": 1920,
+        "vertical": 1080
+      },
+      "graphicsCardModel": {
+        "prefix": "RTX",
+        "number": 3050
+      },
+      "weight": 2300,
+      "batteryCapacity": 48.00,
+      "designMark": "EXCELLENT"
+    },
+    {
+      "id": "10",
+      "name": "Apple MacBook Air",
+      "coreMemorySize": 16,
+      "driveSize": 256,
+      "graphicalMemorySize": 16,
+      "price": 124000,
+      "screenDiagonal": 13.3,
+      "screenResolution": {
+        "horizontal": 2560,
+        "vertical": 1600
+      },
+      "graphicsCardModel": {
+        "prefix": "M1",
+        "number": 0
+      },
+      "weight": 1290,
+      "batteryCapacity": 49.90,
+      "designMark": "EXCELLENT"
+    },
+    {
+      "id": "11",
+      "name": "Apple MacBook Air",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 16,
+      "price": 133000,
+      "screenDiagonal": 13.3,
+      "screenResolution": {
+        "horizontal": 2560,
+        "vertical": 1600
+      },
+      "graphicsCardModel": {
+        "prefix": "M1",
+        "number": 0
+      },
+      "weight": 1290,
+      "batteryCapacity": 49.90,
+      "designMark": "EXCELLENT"
+    },
+    {
+      "id": "12",
+      "name": "Apple MacBook Pro",
+      "coreMemorySize": 16,
+      "driveSize": 512,
+      "graphicalMemorySize": 16,
+      "price": 165500,
+      "screenDiagonal": 14.2,
+      "screenResolution": {
+        "horizontal": 3024,
+        "vertical": 1964
+      },
+      "graphicsCardModel": {
+        "prefix": "M1PRO",
+        "number": 0
+      },
+      "weight": 1600,
+      "batteryCapacity": 70.00,
+      "designMark": "EXCELLENT"
+    }
+  ]
+}
