@@ -2,24 +2,55 @@ package to.deepstorage.notebooksTask
 
 object DecisionMaker {
 
-    fun paretoProcessor(entries: DataSet): DataSet {
+    fun paretoProcessor(dataSet: DataSet): DataSet {
+        dataSet.sortDescending()
+        dataSet.entries.forEach { println(it) }
+        val paretoSet: MutableSet<Entry> = mutableSetOf()
+        for (entry in dataSet.entries) {
+            var isParetoOptimal = true
+            for (other in paretoSet) {
+                if (other.dominates(entry)) {
+                    println("Other: $other, entry: $entry")
+                    isParetoOptimal = false
+                    break
+                }
+                if (entry.dominates(other)) paretoSet.remove(other)
+            }
+            if (isParetoOptimal) paretoSet.add(entry)
+        }
+
+        return DataSet(paretoSet.toList())
+    }
+
+    fun lowestCriteria(dataSet: DataSet): DataSet {
         throw NotImplementedError();
     }
 
-    fun lowestCriteria(entries: DataSet): DataSet {
+    fun subOptimisationMethod(dataSet: DataSet): DataSet {
         throw NotImplementedError();
     }
 
-    fun subOptimisationMethod(entries: DataSet): DataSet {
+    fun lexicographicalMethod(dataSet: DataSet): DataSet {
         throw NotImplementedError();
     }
 
-    fun lexicographicalMethod(entries: DataSet): DataSet {
+    fun commonCriteriaProcessor(dataSet: DataSet): DataSet {
         throw NotImplementedError();
     }
 
-    fun commonCriteriaProcessor(entries: DataSet): DataSet {
-        throw NotImplementedError();
-    }
+    private fun Entry.dominates(other: Entry): Boolean = this >= other && this.hasAtLeastOneBetterValueThen(other)
 
+    private fun DataSet.sortDescending() {
+        entries.sortedWith(compareBy<Entry> { -it.price }.
+        thenBy { it.coreMemorySize }.
+        thenBy { it.graphicalMemorySize }.
+        thenBy { it.driveSize }.
+        thenBy { it.graphicsCardModel }.
+        thenBy { it.screenResolution }.
+        thenBy { -it.weight }.
+        thenBy { it.screenDiagonal }.
+        thenBy { it.batteryCapacity }.
+        thenBy { it.designMark }
+        )
+    }
 }

@@ -47,7 +47,19 @@ data class Entry (
         batteryCapacity > other.batteryCapacity &&
         designMark > other.designMark -> 1
         else -> -1
-    } 
+    }
+
+    fun hasAtLeastOneBetterValueThen(other: Entry): Boolean =
+        coreMemorySize > other.coreMemorySize || 
+        driveSize > other.driveSize ||
+        graphicalMemorySize > other.graphicalMemorySize ||
+        price < other.price ||
+        screenDiagonal > other.screenDiagonal ||
+        screenResolution > other.screenResolution ||
+        graphicsCardModel > other.graphicsCardModel ||
+        weight < other.weight ||
+        batteryCapacity > other.batteryCapacity ||
+        designMark > other.designMark
 }
 
 enum class DesignMark(val value: Int) {

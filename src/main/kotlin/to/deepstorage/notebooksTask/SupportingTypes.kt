@@ -3,7 +3,7 @@ package to.deepstorage.notebooksTask
 data class ScreenResolution(
     val horizontal: Int,
     val vertical: Int
-) {
+) : Comparable<ScreenResolution> {
     private val totalPixels: Int = horizontal * vertical
 
     override fun toString(): String {
@@ -19,7 +19,7 @@ data class ScreenResolution(
         return super.hashCode()
     }
 
-    operator fun compareTo(other: ScreenResolution) : Int = when {
+    override operator fun compareTo(other: ScreenResolution) : Int = when {
         totalPixels == other.totalPixels -> 0
         totalPixels > other.totalPixels -> 1
         else -> -1
@@ -29,8 +29,8 @@ data class ScreenResolution(
 data class GraphicsCardModel(
     val prefix: String,
     val number: Int
-) {
-    override operator fun equals(other: Any?): Boolean = when (other) {
+) : Comparable<GraphicsCardModel> {
+    override fun equals(other: Any?): Boolean = when (other) {
         is GraphicsCardModel -> this.prefix == other.prefix && this.number == other.number
         else -> false
     }
@@ -39,7 +39,7 @@ data class GraphicsCardModel(
         return super.hashCode()
     }
 
-    operator fun compareTo(other: GraphicsCardModel): Int = when (prefix) {
+    override operator fun compareTo(other: GraphicsCardModel): Int = when (prefix) {
         other.prefix ->
             if (number < other.number) -1 else if (number == other.number) 0 else 1
         "M1PRO" -> 1

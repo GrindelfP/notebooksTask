@@ -239,6 +239,46 @@
       "weight": 1600,
       "batteryCapacity": 70.00,
       "designMark": "EXCELLENT"
+    },
+    {
+      "id": "13",
+      "name": "Apple MacBook Foooo",
+      "coreMemorySize": 1,
+      "driveSize": 5,
+      "graphicalMemorySize": 1,
+      "price": 1655000,
+      "screenDiagonal": 1,
+      "screenResolution": {
+        "horizontal": 30,
+        "vertical": 19
+      },
+      "graphicsCardModel": {
+        "prefix": "RTX",
+        "number": 0
+      },
+      "weight": 160000,
+      "batteryCapacity": 0.07,
+      "designMark": "POOR"
+    },
+    {
+      "id": "14",
+      "name": "Apple MacBook SUPER",
+      "coreMemorySize": 1000,
+      "driveSize": 5000,
+      "graphicalMemorySize": 10000,
+      "price": 1,
+      "screenDiagonal": 1,
+      "screenResolution": {
+        "horizontal": 30000,
+        "vertical": 19000
+      },
+      "graphicsCardModel": {
+        "prefix": "M1PRO",
+        "number": 0
+      },
+      "weight": 1,
+      "batteryCapacity": 100000,
+      "designMark": "EXCELLENT"
     }
   ]
 }

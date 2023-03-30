@@ -10,5 +10,5 @@ object DataProcessor {
             "DecisionTheory_MultiObjectiveOptimisation/dataset/laptop_data.json"
     fun processData(): DataSet = ObjectMapper().registerModule(kotlinModule()).readValue(readFile())
 
-     private fun readFile(): String = File(pathToData).readText()
+    private fun readFile(): String = File(pathToData).readText()
 }
