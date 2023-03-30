@@ -1,6 +1,7 @@
 package to.deepstorage.notebooksTask
 
 data class Entry (
+    val id: Int,
     val name: String,
     val coreMemorySize: Int,
     val driveSize: Int,

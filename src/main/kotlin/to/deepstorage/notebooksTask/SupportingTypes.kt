@@ -5,6 +5,7 @@ data class ScreenResolution(
     val vertical: Int
 ) {
     private val totalPixels: Int = horizontal * vertical
+
     override fun toString(): String {
         return horizontal.toString() + "x" + vertical.toString()
     }
@@ -38,10 +39,12 @@ data class GraphicsCardModel(
         return super.hashCode()
     }
 
-    operator fun compareTo(other: GraphicsCardModel): Int = when {
-        prefix == "RTX" && other.prefix == "GTX" -> -1
-        prefix == other.prefix ->
+    operator fun compareTo(other: GraphicsCardModel): Int = when (prefix) {
+        other.prefix ->
             if (number < other.number) -1 else if (number == other.number) 0 else 1
-        else -> 1
+        "M1PRO" -> 1
+        "M1" -> if (other.prefix == "M1PRO") -1 else 1
+        "GTX" -> if (other.prefix.contains("M1")) -1 else 1
+        else -> -1
     }
 }

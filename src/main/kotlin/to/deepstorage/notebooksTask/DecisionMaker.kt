@@ -2,23 +2,23 @@ package to.deepstorage.notebooksTask
 
 object DecisionMaker {
 
-    fun paretoProcessor(entries: List<Entry>): List<Entry> {
+    fun paretoProcessor(entries: DataSet): DataSet {
         throw NotImplementedError();
     }
 
-    fun lowestCriteria(entries: List<Entry>): List<Entry> {
+    fun lowestCriteria(entries: DataSet): DataSet {
         throw NotImplementedError();
     }
 
-    fun subOptimisationMethod(entries: List<Entry>): List<Entry> {
+    fun subOptimisationMethod(entries: DataSet): DataSet {
         throw NotImplementedError();
     }
 
-    fun lexicographicalMethod(entries: List<Entry>): List<Entry> {
+    fun lexicographicalMethod(entries: DataSet): DataSet {
         throw NotImplementedError();
     }
 
-    fun commonCriteriaProcessor(entries: List<Entry>): List<Entry> {
+    fun commonCriteriaProcessor(entries: DataSet): DataSet {
         throw NotImplementedError();
     }
 
