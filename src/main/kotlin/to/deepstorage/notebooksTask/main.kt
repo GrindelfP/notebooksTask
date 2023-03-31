@@ -1,18 +1,22 @@
 package to.deepstorage.notebooksTask
 
 fun main() {
-    val resultsOfDecisionMaking = mutableListOf<DataSet>()
-    val data = DataProcessor.processData()
-    data.entries.forEach { println(it) }
-    DecisionMaker.paretoProcessor(data)
+    var data = DataProcessor.processData()
+    data.print("Initial dataset:")
+    // generating Pareto's set
+    data = DecisionMaker.paretoProcessor(data)
+    data.print("Pareto's set:")
 
 
     /*resultsOfDecisionMaking.add(DecisionMaker.lowestCriteria(data))
     resultsOfDecisionMaking.add(DecisionMaker.subOptimisationMethod(data))
     resultsOfDecisionMaking.add(DecisionMaker.lexicographicalMethod(data))
     resultsOfDecisionMaking.add(DecisionMaker.commonCriteriaProcessor(data))*/
+}
 
-    resultsOfDecisionMaking.forEach {
-        println(/*printing the best*/)
+fun DataSet.print(header: String) {
+    println("\n$header")
+    entries.forEach {
+        println(it)
     }
 }

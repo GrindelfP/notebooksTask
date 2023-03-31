@@ -4,7 +4,7 @@ data class ScreenResolution(
     val horizontal: Int,
     val vertical: Int
 ) : Comparable<ScreenResolution> {
-    private val totalPixels: Int = horizontal * vertical
+    private val totalPixels: Double = horizontal * vertical * 1e-5
 
     override fun toString(): String {
         return horizontal.toString() + "x" + vertical.toString()
@@ -24,6 +24,8 @@ data class ScreenResolution(
         totalPixels > other.totalPixels -> 1
         else -> -1
     }
+
+    operator fun unaryMinus(): Double = -totalPixels
 }
 
 data class GraphicsCardModel(
@@ -46,5 +48,16 @@ data class GraphicsCardModel(
         "M1" -> if (other.prefix == "M1PRO") -1 else 1
         "GTX" -> if (other.prefix.contains("M1")) -1 else 1
         else -> -1
+    }
+
+    operator fun unaryMinus(): GraphicsCardModel {
+        val newPrefix: String = when (prefix) {
+            "M1" -> "RTX"
+            "M1PRO" -> "GTX"
+            "GTX" -> "M1"
+            "RTX" -> "M1PRO"
+            else -> throw Exception("Initialized with wrong value of prefix!")
+        }
+        return GraphicsCardModel(newPrefix, -number)
     }
 }

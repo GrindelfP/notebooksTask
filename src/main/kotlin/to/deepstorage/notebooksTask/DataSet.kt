@@ -1,7 +1,7 @@
 package to.deepstorage.notebooksTask
 
 data class DataSet(
-    val entries: List<Entry>
+    var entries: List<Entry>
 ) {
     operator fun get(index: Int): Entry {
         entries.forEach {
