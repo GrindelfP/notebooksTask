@@ -20,8 +20,13 @@ object DecisionMaker {
         return DataSet(paretoSet.toList())
     }
 
-    fun lowestCriteria(dataSet: DataSet): DataSet {
-        throw NotImplementedError();
+    fun byLowestCriteria(dataSet: DataSet, lowestCriteria: Entry): DataSet {
+        val narrowedSet: MutableSet<Entry> = mutableSetOf()
+        dataSet.entries.forEach { entry ->
+            if (entry >= lowestCriteria) narrowedSet.add(entry)
+        }
+
+        return DataSet(narrowedSet.toList())
     }
 
     fun subOptimisationMethod(dataSet: DataSet): DataSet {
