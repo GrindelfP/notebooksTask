@@ -1,7 +1,6 @@
 package to.deepstorage.notebooksTask
 
 object DecisionMaker {
-
     fun paretoProcessor(dataSet: DataSet): DataSet {
         //dataSet.sortDescending()
         val paretoSet: MutableSet<Entry> = mutableSetOf()
@@ -55,16 +54,16 @@ object DecisionMaker {
         )
     }
 
-    private fun Entry.getCommonCriteria(): Double = 0.1 * (coreMemorySize +
-            driveSize + graphicalMemorySize + price + screenDiagonal + screenResolution.totalPixels
-            + graphicsCardModel + weight + batteryCapacity + designMark.value)
-}
+    private fun Entry.getCommonCriteria(): Double = (0.05 * coreMemorySize +
+            0.05 * driveSize + 0.3 * graphicalMemorySize + 0.05 * (-price) + 0.05 * screenDiagonal + 0.05 * screenResolution.totalPixels
+            + graphicsCardModel * 0.3 + 0.05 * (-weight) + 0.05 * batteryCapacity + 0.05 * designMark.value)
 
-private operator fun Double.plus(graphicsCardModel: GraphicsCardModel): Int = graphicsCardModel.number +
-        when (graphicsCardModel.prefix) {
-            "M1PRO" -> 4
-            "M1" -> 3
-            "GTX" -> 2
-            "RTX" -> 1
-            else -> 0
-        }
+    private operator fun GraphicsCardModel.times(factor: Double) = factor * (number +
+            when (prefix) {
+                "M1PRO" -> 4
+                "M1" -> 3
+                "GTX" -> 2
+                "RTX" -> 1
+                else -> 0
+            })
+}
