@@ -55,8 +55,9 @@ object DecisionMaker {
     }
 
     private fun Entry.getCommonCriteria(): Double = (0.05 * coreMemorySize +
-            0.05 * driveSize + 0.3 * graphicalMemorySize + 0.05 * (-price) + 0.05 * screenDiagonal + 0.05 * screenResolution.totalPixels
-            + graphicsCardModel * 0.3 + 0.05 * (-weight) + 0.05 * batteryCapacity + 0.05 * designMark.value)
+            0.05 * driveSize + 0.3 * graphicalMemorySize + 0.05 * (-price) + 0.05 * screenDiagonal +
+            0.05 * screenResolution.totalPixels + graphicsCardModel * 0.3 + 0.05 * (-weight) + 0.05 * batteryCapacity
+            + 0.05 * designMark.value)
 
     private operator fun GraphicsCardModel.times(factor: Double) = factor * (number +
             when (prefix) {
