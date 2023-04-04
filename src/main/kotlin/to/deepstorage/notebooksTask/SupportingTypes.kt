@@ -4,7 +4,7 @@ data class ScreenResolution(
     val horizontal: Int,
     val vertical: Int
 ) : Comparable<ScreenResolution> {
-    private val totalPixels: Double = horizontal * vertical * 1e-5
+    val totalPixels: Double = horizontal * vertical * 1e-5
 
     override fun toString(): String {
         return horizontal.toString() + "x" + vertical.toString()

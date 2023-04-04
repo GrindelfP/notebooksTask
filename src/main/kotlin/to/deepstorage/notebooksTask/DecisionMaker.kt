@@ -3,7 +3,7 @@ package to.deepstorage.notebooksTask
 object DecisionMaker {
 
     fun paretoProcessor(dataSet: DataSet): DataSet {
-        dataSet.sortDescending()
+        //dataSet.sortDescending()
         val paretoSet: MutableSet<Entry> = mutableSetOf()
         for (entry in dataSet.entries) {
             var isParetoOptimal = true
@@ -29,31 +29,42 @@ object DecisionMaker {
         return DataSet(narrowedSet.toList())
     }
 
-    fun subOptimisationMethod(dataSet: DataSet): DataSet {
-        throw NotImplementedError();
+    fun subOptimisationMethod(narrowedSet: DataSet): Entry = narrowedSet.entries.maxBy { it.graphicsCardModel }
+
+    fun lexicographicalMethod(dataSet: DataSet): Entry {
+        dataSet.sortDescending()
+        return dataSet.entries[0]
     }
 
-    fun lexicographicalMethod(dataSet: DataSet): DataSet {
-        throw NotImplementedError();
-    }
+    fun commonCriteriaProcessor(dataSet: DataSet): Entry {
+        val dataSetWithCriteria = mutableMapOf<Double, Entry>()
+        dataSet.entries.forEach {
+            dataSetWithCriteria[it.getCommonCriteria()] = it
+        }
 
-    fun commonCriteriaProcessor(dataSet: DataSet): DataSet {
-        throw NotImplementedError();
+        return dataSetWithCriteria.maxBy { it.key }.value
     }
 
     private fun Entry.dominates(other: Entry): Boolean = this.hasAtLeastOneBetterValueThen(other) && this >= other
 
     private fun DataSet.sortDescending() {
-        entries = entries.sortedWith(compareBy<Entry> { it.price }.
-        thenBy { -it.coreMemorySize }.
-        thenBy { -it.graphicalMemorySize }.
-        thenBy { -it.driveSize }.
-        thenBy { -it.graphicsCardModel }.
-        thenBy { -it.screenResolution }.
-        thenBy { it.weight }.
-        thenBy { -it.screenDiagonal }.
-        thenBy { -it.batteryCapacity }.
-        thenBy { -it.designMark.value }
+        entries = entries.sortedWith(compareBy<Entry> { it.price }.thenBy { -it.coreMemorySize }
+            .thenBy { -it.graphicalMemorySize }.thenBy { -it.driveSize }.thenBy { -it.graphicsCardModel }
+            .thenBy { -it.screenResolution }.thenBy { it.weight }.thenBy { -it.screenDiagonal }
+            .thenBy { -it.batteryCapacity }.thenBy { -it.designMark.value }
         )
     }
+
+    private fun Entry.getCommonCriteria(): Double = 0.1 * (coreMemorySize +
+            driveSize + graphicalMemorySize + price + screenDiagonal + screenResolution.totalPixels
+            + graphicsCardModel + weight + batteryCapacity + designMark.value)
 }
+
+private operator fun Double.plus(graphicsCardModel: GraphicsCardModel): Int = graphicsCardModel.number +
+        when (graphicsCardModel.prefix) {
+            "M1PRO" -> 4
+            "M1" -> 3
+            "GTX" -> 2
+            "RTX" -> 1
+            else -> 0
+        }
