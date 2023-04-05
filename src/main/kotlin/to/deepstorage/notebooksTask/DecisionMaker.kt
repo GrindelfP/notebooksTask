@@ -2,7 +2,6 @@ package to.deepstorage.notebooksTask
 
 object DecisionMaker {
     fun paretoProcessor(dataSet: DataSet): DataSet {
-        //dataSet.sortDescending()
         val paretoSet: MutableSet<Entry> = mutableSetOf()
         for (entry in dataSet.entries) {
             var isParetoOptimal = true
