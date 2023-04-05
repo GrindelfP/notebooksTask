@@ -1,7 +1,8 @@
 package to.deepstorage.notebooksTask
 
 fun main() {
-    val data = DataPreprocessor.extractData()
+    val data: DataSet = DataPreprocessor("/home/gregory/MEGA/programming/kotlin/" +
+            "DecisionTheory_MultiObjectiveOptimisation/dataset/laptop_data.json").extractData()
     data.print("Initial dataset:")
 
     // generating Pareto's set
@@ -25,7 +26,7 @@ fun main() {
             "graphics memory size etc.) the best is: \n${lexicographicalResult}\n")
 
     // using common criteria method
-    val commonCriteriaResult = DecisionMaker.commonCriteriaProcessor(data)
+    val commonCriteriaResult = DecisionMaker.combinedCriteriaProcessor(data)
     println("After applying common criteria method the best is: \n${commonCriteriaResult}\n")
 }
 
