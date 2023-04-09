@@ -1,4 +1,4 @@
-package to.deepstorage.notebooksTask
+package to.deepstorage.notebookstask.domain
 
 /**
  * Data class representing the screen resolution.
