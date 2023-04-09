@@ -1,4 +1,4 @@
-package to.deepstorage.notebooksTask
+package to.deepstorage.notebookstask.domain
 
 /**
  * Enum class containing desing marks for the laptops, which are "poor", "good" and "excellent".
