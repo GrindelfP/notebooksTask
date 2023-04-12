@@ -43,15 +43,15 @@ class DecisionMakerTest {
                         Notebook(
                                 4,
                                 "Gigabyte G5 GE",
-                                16,
-                                512,
-                                4,
-                                68000,
-                                15.6,
-                                ScreenResolution(1920, 1080),
+                                6,
+                                256,
+                                2,
+                                80000,
+                                13.6,
+                                ScreenResolution(1280, 720),
                                 GraphicsCardModel("RTX", 3050),
-                                1990,
-                                48.96,
+                                2990,
+                                28.96,
                                 DesignMark.POOR
                         )
                 )
